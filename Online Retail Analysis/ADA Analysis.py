@@ -1,12 +1,6 @@
 import sys
 import csv
 
-# https://stackoverflow.com/questions/35744613/read-in-xlsx-with-csv-module-in-python
-
-#f=open("Online Retail csv.csv", "r")
-#print(f.readlines())
-#for line in f.readlines():
-
 customers = []
 goods = []
 
