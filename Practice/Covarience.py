@@ -1,10 +1,8 @@
 # Covariance and Correlation - the measure of joint variability of two random variables. If the greater values of one
 # variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values,
 # (i.e., the variables tend to show similar behavior), the covariance is positive.
-#
 # In the opposite case, when the greater values of one variable mainly correspond to the lesser values of the other,
 # (i.e., the variables tend to show opposite behavior), the covariance is negative.
-#
 # The sign of the covariance therefore shows the tendency in the linear relationship between the variables.
 #
 # The magnitude of the covariance is not easy to interpret because it is not normalized
@@ -15,16 +13,15 @@
 # Create a Bivariate Scatter Plot (where 2 things are compared). (X Vs Y)
 
 # STEP 2
-# Describe the shape or pattern of the data point distribution. (Linear, Polynomial)
+# Describe the shape or pattern of the data point distribution. (Random, Linear, Polynomial)
 
 # STEP 3
-# Make an assumption on the two variable's relation. (When one rises, the other tends to rise too.)
+# Make an assumption on the two variable's relation. (For example, when one rises does the other rise too?)
 
 # Covariance how they change together, how do they behave as a pair.
 # A positive value indicates an increasing linear relationship. /
 # A negative value indicates a decreasing linear relationship. \
-# The two variables are opposite of each other.
-# When the scatter plot looks like a shotgun shot (random) the covariance is near or equal to 0
+# When the scatter plot looks like a shotgun shot (random) the covariance is near or equal to 0.
 
 # (SAMPLE & POPULATION) FORMULAS:
 # SAMPLE:
