@@ -60,36 +60,38 @@ plt.ylabel("y")
 # Render buffer
 plt.show()
 
-
-# STEP 2: Calculate the mean for both x and y
-x_mean = sum(x)/len(x)
-print("X mean: ", sum(x)/len(x))
-
-# Mean calc using numpy
-y_mean = np.mean(y)
-print("Y mean: ", np.mean(y))
-
 # STEP 3, 4, 5
-summed_xy_diff = 0
+def calc_covariance(x, y):
+    summed_xy_diff = 0
 
-for count in range(len(x)):
-    # STEP 3: Calculate the difference between the current value and the attribute mean
-    x_diff = x[count] - x_mean
-    y_diff = y[count] - y_mean
+    # STEP 2: Calculate the mean for both x and y
+    x_mean = sum(x) / len(x)
+    print("X mean: ", sum(x) / len(x))
 
-    # STEP 4: Multiply both differences
-    xy_diff = x_diff * y_diff
-    print("Current Difference: ", round(xy_diff, 2))
+    # Mean calc using numpy
+    y_mean = np.mean(y)
+    print("Y mean: ", np.mean(y))
 
-    # STEP 5: Sum the xy difference for all pairs in the data set
-    summed_xy_diff += xy_diff
+    for count in range(len(x)):
+        # STEP 3: Calculate the difference between the current value and the attribute mean
+        x_diff = x[count] - x_mean
+        y_diff = y[count] - y_mean
 
-print("Summed Difference: ", summed_xy_diff)
+        # STEP 4: Multiply both differences
+        xy_diff = x_diff * y_diff
+        print("Current Difference: ", round(xy_diff, 2))
 
-# STEP 6: Divide summed difference by n-1
-covariance = summed_xy_diff/(len(x)-1)
-print("Covariance: ", round(covariance, 2))
-# RESULT: 106.93 - positive value i.e. positive/increasing linear covariance.
+        # STEP 5: Sum the xy difference for all pairs in the data set
+        summed_xy_diff += xy_diff
+
+    print("Summed Difference: ", summed_xy_diff)
+
+    # STEP 6: Divide summed difference by n-1
+    covariance = summed_xy_diff/(len(x)-1)
+    print("Covariance: ", round(covariance, 2))
+    # RESULT: 106.93 - positive value i.e. positive/increasing linear covariance.
+    return covariance
+
 
 # Correlation (between -1 and +1)
 #   - Correlation just like Covariance is only applicable to a linear relationship.
@@ -100,8 +102,8 @@ print("Covariance: ", round(covariance, 2))
 # r = Covariance(x,y) / Standard Deviation(x) * Standard Deviation(y)
 
 # the standard deviation that Numpy and Statistics give are slightly different. TODO: find out how they defer.
-print("Standard Deviation of X: ", stat.stdev(x))  # Stat - 6.48; NumPy - 6.14
-print("Standard Deviation of Y: ", stat.stdev(y))  # Stat - 16.69; NumPy - 15.95
+print("Standard Deviation of X: ", round(stat.stdev(x), 3))  # Stat - 6.48; NumPy - 6.14
+print("Standard Deviation of Y: ", round(stat.stdev(y), 3))  # Stat - 16.69; NumPy - 15.95
 
-r = covariance / (stat.stdev(x) * stat.stdev(y))
-print("Correlation coefficient: ", round(r, 2))
+r = calc_covariance(x, y) / (stat.stdev(x) * stat.stdev(y))
+print("Correlation coefficient: ", round(r, 3))
