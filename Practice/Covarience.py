@@ -29,7 +29,7 @@
 #   and all of that divided by num samples - 1.
 #   Pseudo formula: Sum((xi - xmean)*(yi - ymean))/n-1
 
-# PSEUDO CODE
+# Summerised Steps
 # STEP 1: Get all the data from the 2 columns/variables/attributes and create a scatter plot.
 # STEP 2: Calculate the mean for each column/variable/attribute.
 # STEP 3: Calculate (xi-xmean) and (yi-ymean)
