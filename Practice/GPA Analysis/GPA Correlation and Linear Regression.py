@@ -48,7 +48,6 @@ print("Standard Deviation - Verb: ", round(stat.stdev(verb_col_data), 4))
 
 # TODO: Draw a Scatter plot comparing the student's high school gpas to their overall GPAs.
 plt.scatter(hs_col_data, uni_col_data)
-# plt.plot(hs_col_data, uni_col_data, label="Line", color="#a3435d")
 
 # Adding Labels
 plt.xlabel("High School GPA")
@@ -58,7 +57,6 @@ plt.ylabel("Overall University GPA")
 plt.show()
 
 
-# TODO: Find the correlation between high school GPA and overall university GPA.
 def calc_covariance(x, y, x_label="X mean", y_label="Y mean"):
     summed_xy_diff = 0
 
@@ -86,6 +84,7 @@ def calc_covariance(x, y, x_label="X mean", y_label="Y mean"):
     return covariance
 
 
+# TASK: Find the correlation between high school GPA and overall university GPA.
 hs_and_uni_cov = calc_covariance(hs_col_data, uni_col_data, "HS Mean", "Overall Mean")
 print("Cov: ", hs_and_uni_cov)
 hs_uni_r = hs_and_uni_cov / (stat.stdev(hs_col_data) * stat.stdev(uni_col_data))
@@ -98,7 +97,7 @@ print("Correlation coefficient: ", round(math_and_verb_r, 4))
 
 
 # LINEAR REGRESSION
-# TASK: If someone had a 2.2 High School GPA what is their overall?
+# TASK: If a student's High School GPA was 2.2 what would be their overall university GPA?
 high_mean = sum(hs_col_data) / len(hs_col_data)
 overall_uni_mean = sum(uni_col_data) / len(uni_col_data)
 
