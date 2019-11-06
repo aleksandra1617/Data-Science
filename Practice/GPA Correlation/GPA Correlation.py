@@ -80,7 +80,7 @@ def calc_covariance(x, y, x_label="X mean", y_label="Y mean"):
         # Sum the xy difference for all pairs in the data set
         summed_xy_diff += xy_diff
 
-    # STEP 6: Divide summed difference by n-1
+    # Divide summed difference by n-1
     covariance = summed_xy_diff/(len(x)-1)
     return covariance
 
