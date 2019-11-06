@@ -113,7 +113,7 @@ overall_uni_GPA = a*2.2 + b
 print("Overall University GPA: ", overall_uni_GPA)
 
 # Cast all data from string to float
-x = [float(e) for e in hs_col_data]
+x = [float(element) for element in hs_col_data]
 
 uni_col_data_pre = np.multiply(a, x) + b
 plt.scatter(hs_col_data, uni_col_data)
