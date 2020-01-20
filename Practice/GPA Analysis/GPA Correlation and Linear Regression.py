@@ -6,7 +6,7 @@ import numpy as np
 os.getcwd()
 print(os.getcwd())
 
-# Prepare data
+# Load data
 file_object = open(os.getcwd() + "\gpa.txt", "r")
 student_data = [line.strip().split(' ') for line in file_object.readlines()]
 
